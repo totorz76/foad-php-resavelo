@@ -6,6 +6,7 @@ require_once __DIR__ . '/../includes/functions_reservation.php';
 require_once __DIR__ . '/../includes/functions_calculation.php';
 
 $veloArray = getAllVelos($pdo);
+include PATH_PROJET . '/includes/partials/header.php';
 ?>
 
 <!-- View -->
