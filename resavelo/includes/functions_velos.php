@@ -14,7 +14,7 @@ function getAllVelos($pdo)
 
 function getVeloById($pdo, $id)
 {
-    $sql = 'SELECT * FROM velos WHERE id = :id';
+    $sql = 'SELECT * FROM velos WHERE velo_id = :id';
     $query = $pdo->prepare($sql);
     $query->bindValue(':id', $id);
     $query->execute();
@@ -35,7 +35,7 @@ function addVelo($pdo, $data)
 
 function updateVelo($pdo, $id, $data)
 {
-    $sql = 'UPDATE velos SET name = :name, price = :price, quantity = :quantity, description = :description, image_url = :image_url WHERE id = :id';
+    $sql = 'UPDATE velos SET name = :name, price = :price, quantity = :quantity, description = :description, image_url = :image_url WHERE velo_id = :id';
     $query = $pdo->prepare($sql);
     $query->bindValue(':name', $data['name']);
     $query->bindValue(':price', $data['price']);
@@ -48,7 +48,7 @@ function updateVelo($pdo, $id, $data)
 
 function deleteVelo($pdo, $id)
 {
-    $sql = 'DELETE FROM velos WHERE id = :id';
+    $sql = 'DELETE FROM velos WHERE velo_id = :id';
     $query = $pdo->prepare($sql);
     $query->bindValue(':id', $id);
     $query->execute();

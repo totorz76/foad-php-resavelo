@@ -9,7 +9,7 @@ USE resavelo;
 -- Création des tables
     -- Création de la table velos
     CREATE TABLE velos (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        velo_id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(150) NOT NULL,
         price DECIMAL(10,2) NOT NULL,
         quantity INT NOT NULL DEFAULT 0,

@@ -22,13 +22,13 @@ include PATH_PROJET . '/includes/partials/header.php';
      <?php
         if (count($veloArray) === 0) :
             echo '<h3>Aucun vélo enregistré</h3>';
-            echo '<a href="' . WEB_ROOT . '/admin/velos_form.php">Ajouter un vélo</a>';
+            echo '<a href="' . WEB_ROOT . '/admin/velo_form.php">Ajouter un vélo</a>';
             die();
         endif;
 
         ?>
         <h1>Liste des vélos</h1>
-        <a href="<?= WEB_ROOT . './admin/velos_form.php' ?>">Ajouter un vélo</a>
+        <a href="<?= WEB_ROOT . './admin/velo_form.php' ?>">Ajouter un vélo</a>
 
         <table>
             <thead>
@@ -51,6 +51,17 @@ include PATH_PROJET . '/includes/partials/header.php';
                         <td><?= $velo['description'] ?></td>
                         <td><img src="<?= $velo['image_url'] ?>" alt="<?= $velo['name'] ?>"></td>
                         <td><?= $velo['created_at'] ?></td>
+                        <td>
+                            <a href="<?= WEB_ROOT ?>/admin/velo_form.php?veloId=<?= $velo['velo_id'] ?>"
+                               class="btn btn-info btn-sm">
+                                Edit
+                            </a>
+
+                            <a href="<?= WEB_ROOT ?>/admin/velo_delete.php?velo_id=<?= $velo['velo_id'] ?>"
+                               onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce vélo ?')">
+                                Supprimer
+                            </a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
