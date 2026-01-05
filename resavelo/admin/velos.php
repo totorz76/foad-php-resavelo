@@ -8,6 +8,7 @@ require_once __DIR__ . '/../includes/functions_calculation.php';
 $veloArray = getAllVelos($pdo);
 ?>
 
+<!-- View -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +21,12 @@ $veloArray = getAllVelos($pdo);
      <?php
         if (count($veloArray) === 0) :
             echo '<h3>Aucun vélo enregistré</h3>';
-            echo '<a href="' . WEB_ROOT . '/driver/add-driver.php" class="btn btn-secondary mb-3">Ajouter un conducteur</a>';
+            // echo '<a href="' . WEB_ROOT . '/driver/add-driver.php" class="btn btn-secondary mb-3">Ajouter un conducteur</a>';
             die();
         endif;
 
         ?>
+        <h1>Liste des vélos</h1>
+
 </body>
 </html>
