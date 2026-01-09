@@ -4,6 +4,28 @@ define('PATH_PROJET', $_SERVER['DOCUMENT_ROOT'] . '/foad-php-resavelo/resavelo')
 define('WEB_ROOT', '/foad-php-resavelo/resavelo');
 
 // Fonctions velos
+
+function dg($data)
+{
+    echo '<pre style="background-color: #000; color: #fff; padding: 10px">';
+    var_dump($data);
+    echo '</pre>';
+};
+
+function dd($data)
+{
+    echo '<pre style="background-color: #000; color: #fff; padding: 10px">';
+    var_dump($data);
+    echo '</pre>';
+    die();
+};
+
+function clean($dataParam)
+{
+    $data = trim($dataParam);
+    $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+    return $data;
+}
 function getAllVelos($pdo)
 {
     $sql = 'SELECT * FROM velos';

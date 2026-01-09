@@ -29,7 +29,7 @@ USE resavelo;
 
     CONSTRAINT fk_reservations_velos
         FOREIGN KEY (velo_id) -- pour lier réservations ↔ vélos
-        REFERENCES velos(id)
+        REFERENCES velos(velo_id)
         ON DELETE CASCADE -- ON DELETE CASCADE → si un vélo est supprimé, ses réservations aussi
     );
 
